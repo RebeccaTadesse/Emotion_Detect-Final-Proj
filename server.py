@@ -20,6 +20,9 @@ def em_analyzer():
     j_score = response['joy']
     s_score = response['sadness']
     dom_emotion = response['dominant_emotion']
+    if dom_emotion is None:
+        # This occurs if field is blank. If so, return error message
+        return "Invalid text! Please try again!"
     # Return an f-string with the final statement
     return f"For the given statement, the system response is \
     'anger': {a_score}, 'disgust': {d_score}, 'fear': {f_score}, \
