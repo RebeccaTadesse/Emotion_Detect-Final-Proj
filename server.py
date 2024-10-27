@@ -2,13 +2,18 @@
 Web App using FLask. It encaplsulates the necessary CRUD functions 
 for this web app.
 '''
+# Import necessary modules/packages
 from flask import Flask, render_template, request
 from EmotionDetection.emotion_detection import emotion_detector
 
+# Instantiate the app
 app = Flask("Emotion Detector")
 
 @app.route("/emotionDetector")
 def em_analyzer():
+    ''' This is the emotion analyzer function that calls on emotion_detector. It 
+        takes input via a request and returns a string containing the emotion analysis.
+    '''
     # Extract the text to be analyzed
     text_to_analyze = request.args.get('textToAnalyze')
     # Pass the text into the emotion_detector function and save to response
@@ -31,11 +36,10 @@ def em_analyzer():
 
 @app.route("/")
 def render_index_page():
+    ''' This function uses render_template to render the webpage.
+    '''
     return render_template("index.html")
 
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
-
-
-
