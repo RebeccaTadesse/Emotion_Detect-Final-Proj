@@ -40,7 +40,9 @@ server.py initiates the application of sentiment analysis to be executed over th
 Make sure you have Python and Flask installed.
 Fork and clone this repository, and navigate to the project directory using the cd command.
 Open the Python terminal in the shell and call server.py
+
 If using Cloud Skills IDE, navigate to Skills Network Toolbox and launch application
+
 Make sure your port is 5000 and launch either in brower or in a new window in the IDE.
 
 ### Notes
